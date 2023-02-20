@@ -1,0 +1,11 @@
+bot_token: ''
+db_uri: 'mongodb://localhost:27017'
+db_name: ''
+channel_id: -100
+channel_url: 'https://t.me/+'
+notifier_seconds: 120
+per_page_limit: 20
+inline_cache_time: 300
+admins:
+  - 123456789
+checker_timeout: 300
