@@ -521,18 +521,27 @@ async def admins_notify(text: str) -> None:
 @dp.errors_handler()
 async def errors_handler(update: Optional[types.Update]=None, exception: Optional[Exception]=None, updated_timetable_infos_list: Optional[List[TimeTableInfo]]=None) -> bool:
     if updated_timetable_infos_list:
-        await admins_notify(
-            text = TEXTS["admins"]["new_timetables"]["default"].format(
-                timetables = "\n".join([
-                    TEXTS["admins"]["new_timetables"]["timetable"].format(
-                        number = timetable_info.number,
-                        text = timetable_info.text,
-                        hash = timetable_info.hash
-                    )
-                    for timetable_info in updated_timetable_infos_list
-                ])
-            )
+        new_timetables_text: str = TEXTS["new_timetables"]["default"].format(
+            timetables = "\n".join([
+                TEXTS["new_timetables"]["timetable"].format(
+                    number = timetable_info.number,
+                    text = timetable_info.text,
+                    hash = timetable_info.hash
+                )
+                for timetable_info in updated_timetable_infos_list
+            ])
         )
+
+        await bot.send_message(
+            chat_id = config.log_channel_id,
+            text = new_timetables_text
+        )
+
+        # await admins_notify(
+        #     text = TEXTS["admins"]["new_timetables"].format(
+        #         new_timetables = new_timetables_text
+        #     )
+        # )
 
         return True
 

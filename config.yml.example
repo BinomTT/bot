@@ -3,9 +3,9 @@ db_uri: 'mongodb://localhost:27017'
 db_name: ''
 channel_id: -100
 channel_url: 'https://t.me/+'
-notifier_seconds: 120
-per_page_limit: 20
-inline_cache_time: 300
+logs_channel_id: -100
 admins:
   - 123456789
+per_page_limit: 20
+inline_cache_time: 300
 checker_timeout: 300

@@ -11,10 +11,10 @@ class Config:
     db_name: str
     channel_id: int
     channel_url: str
-    notifier_seconds: int
+    logs_channel_id: int
+    admins: List[int]
     per_page_limit: int
     inline_cache_time: int
-    admins: List[int]
     checker_timeout: int
 
 

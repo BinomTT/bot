@@ -23,11 +23,12 @@ TEXTS: dict = {
             "default": "Свободные кабинеты:\n({timetable_i}-я смена, {day_name}, {period_i}-й урок)\n\n{classrooms}",
         }
     },
+    "new_timetables": {
+        "default": "Обновление расписаний приостановлено.\nСписок новых расписаний:\n{timetables}",
+        "timetable": "<code>{number}</code> - <i>{text}</i> (<code>{hash}</code>)"
+    },
     "admins": {
-        "new_timetables": {
-            "default": "Обновление расписаний приостановлено.\nСписок новых расписаний:\n{timetables}",
-            "timetable": "<code>{number}</code> - <i>{text}</i> (<code>{hash}</code>)"
-        },
+        # "new_timetables": "Обновление расписаний приостановлено.{new_timetables}",
         "unknown_error": "#error\nНеизвестная ошибка:\n<code>{traceback}</code>\n\n<code>{update}</code>"
     },
     "start": "Привет!\nЯ выдаю расписания для всех классов.\nВыберите Ваш класс:",
