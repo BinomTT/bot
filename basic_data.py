@@ -41,7 +41,8 @@ TEXTS: dict = {
         "timetable_inline": "Изменения",
         "prev": "⬅️",
         "next": "➡️"
-    }
+    },
+    "null": "⁣"
 }
 
 ALPHABET: List[str] = [

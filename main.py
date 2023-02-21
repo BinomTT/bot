@@ -240,7 +240,13 @@ async def callback_query_handler(callback_query: types.CallbackQuery) -> None:
             )
 
             if args[3] not in timetable_numbers:
-                await callback_query.message.delete()
+                try:
+                    await callback_query.message.delete()
+
+                except exceptions.MessageCantBeDeleted:
+                    await callback_query.message.edit_text(
+                        text = TEXTS["null"]
+                    )
 
                 await callback_query.message.answer(
                     text = TEXTS["edupage"]["timetable"]["updated"],
@@ -293,7 +299,13 @@ async def callback_query_handler(callback_query: types.CallbackQuery) -> None:
                 return
 
             if args[2] not in timetable_numbers:
-                await callback_query.message.delete()
+                try:
+                    await callback_query.message.delete()
+
+                except exceptions.MessageCantBeDeleted:
+                    await callback_query.message.edit_text(
+                        text = TEXTS["null"]
+                    )
 
                 await callback_query.message.answer(
                     text = TEXTS["edupage"]["timetable"]["updated"],
